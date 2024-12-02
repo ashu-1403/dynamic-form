@@ -116,7 +116,7 @@ const Form = () => {
       {/* Dropdown to choose form type */}
       <div className="mb-4">
         <label htmlFor="formType" className="block text-lg">Select Form Type</label>
-        <select id="formType" className="p-2 mt-2 w-full border rounded" onChange={handleFormTypeChange}>
+        <select id="formType" className="p-2 mt-2 w-full border rounded text-black" onChange={handleFormTypeChange}>
           <option value="">-- Select --</option>
           <option value="userInformation">User Information</option>
           <option value="addressInformation">Address Information</option>
@@ -128,7 +128,7 @@ const Form = () => {
       {fields.length > 0 && (
         <form onSubmit={handleSubmit} className="space-y-4">
           {fields.map((field) => (
-            <div key={field.name} className="mb-4">
+            <div key={field.name} className="mb-4 ">
               <label htmlFor={field.name} className="block text-sm font-semibold">
                 {field.label}
                 {field.required && <span className="text-red-500">*</span>}
@@ -139,7 +139,7 @@ const Form = () => {
                   name={field.name}
                   value={formData[field.name] || ''}
                   onChange={handleInputChange}
-                  className="p-2 mt-2 w-full border rounded"
+                  className="p-2 mt-2 w-full border rounded text-black"
                 >
                   <option value="">-- Select --</option>
                   {field.options?.map((option) => (
