@@ -69,7 +69,7 @@ const Form = () => {
   };
 
   const validateField = (name: string, value: string) => {
-    let newErrors = { ...errors };
+    const newErrors = { ...errors };
     const field = fields.find((field) => field.name === name);
     if (field && field.required && !value) {
       newErrors[name] = `${field.label} is required`;
